@@ -72,7 +72,7 @@ export default function Register() {
           {...register('password', { required: true })} 
           type="password" 
           placeholder="Password" 
-          className={`border p-2 w-full rounded-md mb-4 ${errors.password ? 'border-red-500' : 'border-gray-300'}`} 
+          className={`border p-2 w-full rounded-md mb-2 ${errors.password ? 'border-red-500' : 'border-gray-300'}`} 
         />
         {errors.password && <span className="text-red-500 text-sm mb-4">This field is required</span>}
 
