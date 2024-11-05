@@ -3,7 +3,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useMutation } from '@tanstack/react-query';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Notification from '../Notification/index'; // Import Notification component
 
 interface RegisterForm {
@@ -24,13 +24,16 @@ const Register: React.FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<RegisterForm>();
   const [notification, setNotification] = React.useState<{ message: string; show: boolean; type: 'success' | 'error' }>({ message: '', show: false, type: 'success' });
 
+  const navigate = useNavigate();
+
   const mutation = useMutation<void, ApiError, RegisterForm>({
     mutationFn: async (data) => {
-      const response = await axios.post('http://localhost:3000/user/register', data);
+      const response = await axios.post('https://ia3-be-nestjs-production.up.railway.app/user/register', data);
       return response.data;
     },
     onSuccess: () => {
       setNotification({ message: 'Registration successful!', show: true, type: 'success' });
+      navigate('/login'); 
     },
     onError: (error) => {
       setNotification({ message: 'Error: ' + error.response.data.message, show: true, type: 'error' });

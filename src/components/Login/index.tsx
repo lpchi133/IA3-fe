@@ -1,4 +1,3 @@
-// src/Login.tsx
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -18,7 +17,7 @@ const Login: React.FC = () => {
 
   const mutation = useMutation({
     mutationFn: async (data: LoginForm) => {
-      const response = await axios.post('http://localhost:3000/user/login', data);
+      const response = await axios.post('https://ia3-be-nestjs-production.up.railway.app/user/login', data);
       return response.data.user;
     },
     onSuccess: (data) => {
