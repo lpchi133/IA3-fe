@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Home: React.FC = () => {
+export default function Home(){
   const user = JSON.parse(localStorage.getItem('user') || 'null');
 
   return (
@@ -33,5 +32,3 @@ const Home: React.FC = () => {
     </div>
   );
 };
-
-export default Home;

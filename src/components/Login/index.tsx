@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useMutation } from '@tanstack/react-query';
@@ -10,7 +10,7 @@ interface LoginForm {
   password: string;
 }
 
-const Login: React.FC = () => {
+export default function Login() {
   const { register, handleSubmit, formState: { errors } } = useForm<LoginForm>();
   const navigate = useNavigate();
   const [notification, setNotification] = useState<{ message: string; show: boolean; type: 'success' | 'error' }>({ message: '', show: false, type: 'success' });
@@ -72,5 +72,3 @@ const Login: React.FC = () => {
     </div>
   );
 };
-
-export default Login;

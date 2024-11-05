@@ -1,4 +1,3 @@
-// src/Register.tsx
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -20,7 +19,7 @@ interface ApiError {
   };
 }
 
-const Register: React.FC = () => {
+export default function Register() {
   const { register, handleSubmit, formState: { errors } } = useForm<RegisterForm>();
   const [notification, setNotification] = React.useState<{ message: string; show: boolean; type: 'success' | 'error' }>({ message: '', show: false, type: 'success' });
 
@@ -95,5 +94,3 @@ const Register: React.FC = () => {
     </div>
   );
 };
-
-export default Register;
