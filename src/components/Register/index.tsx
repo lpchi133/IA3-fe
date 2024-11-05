@@ -57,16 +57,16 @@ export default function Register() {
         <input 
           {...register('username', { required: true })} 
           placeholder="Username" 
-          className={`border p-2 w-full rounded-md mb-4 ${errors.username ? 'border-red-500' : 'border-gray-300'}`} 
+          className={`border p-2 w-full rounded-md mb-2 ${errors.username ? 'border-red-500' : 'border-gray-300'}`} 
         />
-        {errors.username && <span className="text-red-500 text-sm">This field is required</span>}
+        {errors.username && <span className="text-red-500 text-sm mb-4">This field is required</span>}
 
         <input 
           {...register('email', { required: true, pattern: { value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/, message: 'Email format is invalid' } })} 
           placeholder="Email" 
-          className={`border p-2 w-full rounded-md mb-4 ${errors.email ? 'border-red-500' : 'border-gray-300'}`} 
+          className={`border p-2 w-full rounded-md mb-2 ${errors.email ? 'border-red-500' : 'border-gray-300'}`} 
         />
-        {errors.email && <span className="text-red-500 text-sm">{errors.email.message || 'This field is required'}</span>}
+        {errors.email && <span className="text-red-500 text-sm mb-4">{errors.email.message || 'This field is required'}</span>}
 
         <input 
           {...register('password', { required: true })} 
@@ -74,7 +74,7 @@ export default function Register() {
           placeholder="Password" 
           className={`border p-2 w-full rounded-md mb-4 ${errors.password ? 'border-red-500' : 'border-gray-300'}`} 
         />
-        {errors.password && <span className="text-red-500 text-sm">This field is required</span>}
+        {errors.password && <span className="text-red-500 text-sm mb-4">This field is required</span>}
 
         <button 
           type="submit" 

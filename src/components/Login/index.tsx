@@ -48,7 +48,7 @@ export default function Login() {
         <input
           {...register('username', { required: true })}
           placeholder="Username"
-          className={`border p-2 mb-4 w-full ${errors.username ? 'border-red-500' : 'border-gray-300'}`}
+          className={`border p-2 mb-2 w-full ${errors.username ? 'border-red-500' : 'border-gray-300'}`}
         />
         {errors.username && <span className="text-red-500 mb-4">This field is required</span>}
 
@@ -56,7 +56,7 @@ export default function Login() {
           {...register('password', { required: true })}
           type="password"
           placeholder="Password"
-          className={`border p-2 mb-4 w-full ${errors.password ? 'border-red-500' : 'border-gray-300'}`}
+          className={`border p-2 mb-2 w-full ${errors.password ? 'border-red-500' : 'border-gray-300'}`}
         />
         {errors.password && <span className="text-red-500 mb-4">This field is required</span>}
 
